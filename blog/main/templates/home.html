@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Song+Myung&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/home.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>21DAYS</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul class="listcontainer">
+                <li class="list"><a href="{% url 'home' %}">메인</a></li>
+                <li class="list"><a href="#">게시판</a></li>
+                <li class="list"><a href="{% url 'new' %}">글쓰기</a></li>
+                <li class="list"><a href="#">성취 역사</a></li>
+                <li class="list"><a href="#">방명록</a></li>
+            </ul>
+        </nav>
+        <div>
+            <header>
+                <div class="tlistcontainer">
+                    <li class="tlist"></li>
+                    <li class="tlist"><h1 id="maintitle">21DAYS DIARY</h1></li>
+                    <li class="tlist">            
+                        <div class="changebtn">        
+                            <input type="button" value="change" onclick="
+                            if(document.querySelector('body').dataset.mode ==='night'){
+                                    document.querySelector('body').style.backgroundColor= 'black';
+                                    document.querySelector('body').style.color = 'white';
+                                    document.querySelector('body').dataset.mode = 'day';
+                                    this.value='night';
+                            }else{
+                                    document.querySelector('body').style.backgroundColor= 'white';
+                                    document.querySelector('body').style.color = 'black';
+                                    document.querySelector('body').dataset.mode = 'night';
+                                    this.value = 'day';
+                            }">
+                            <a href="#" type="button" id="login" value="Login">Login</a>
+                            <a href="#" type="button" id="signup"value="Signup">Signup</a>                        
+                        </div>   
+                    </li>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi laudantium, facilis veniam neque facere velit corrupti inventore molestias doloribus! Iusto facilis libero ad hic ab! Dolor impedit laudantium asperiores aut!</p>       
+            </header>
+            <div class="middle">
+                <section class="content">         
+                    <article>
+                            <section id="mainp">
+                                {% for main in blogs.all %}
+                                <div>
+                                    <h1>{{main.title}}</h1>
+                                    <p> date : {{main.pub_date}}</p>
+                                    <p> {{main.summary}} <a href = "{% url 'post' main.id %}">  ..더보기</a></p>
+                                    <br>
+                                </div>    
+                                {% endfor %}
+                            </section>
+                    </article>
+                    <aside class="content">
+                        <ul class="idpw">
+                            <ul>
+                                <li>ID:<input type="text" class="login" name="ID" placeholder="아이디를 입력하시오"></li>
+                                <li>PW:</li>
+                                <li><input type="text" class="login" name="PW" placeholder="패스워드를 입력하시오"></li>
+                            </ul> 
+                        </ul>
+                    </aside>
+                </section>
+            </div>
+        </div>
+        <footer>
+            <ul>
+                <div>
+                    <li>이용약관</li>
+                    <li>음 그리고</li>
+                    <li>고객센터</li>
+                    <li>&copy;21DAYS</li>
+                </div>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>
