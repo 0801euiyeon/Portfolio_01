@@ -30,7 +30,7 @@ nav{
     background-color: rgba(171, 162, 250, 0.568);
 }
 .listcontainer{
-    position: fixed;
+    /* position: fixed; */
     display: flex;
     width: 100%;
     flex-direction: row;
