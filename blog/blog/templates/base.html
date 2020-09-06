@@ -2,6 +2,7 @@
 {% load static %}
 <html lang="en">
 <head>
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
@@ -9,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Song+Myung&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static '/css/home.css' %}">
+    <link rel="stylesheet" href="{% static '/css/new.css' %}">
+    <link rel="stylesheet" href="{% static '/css/post.css' %}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>99DAYS</title>
     <style>
@@ -19,8 +22,8 @@
         <nav>
             <ul class="listcontainer">
                 <li class="list"><a href="{% url 'home' %}">메인</a></li>
-                <li class="list"><a href="#">게시판</a></li>
                 <li class="list"><a href="{% url 'new' %}">글쓰기</a></li>
+                <li class="list"><a href="#">사용설명서</a></li>
                 <li class="list"><a href="#">성취 역사</a></li>
                 <li class="list"><a href="#">방명록</a></li>
             </ul>
@@ -29,7 +32,7 @@
             <header>
                 <div class="tlistcontainer">
                     <li class="tlist"></li>
-                    <li class="tlist"><h1 id="maintitle">21DAYS DIARY</h1></li>
+                    <li class="tlist"><h1 id="maintitle">99DAYS DIARY</h1></li>
                     <li class="tlist">            
                         <div class="changebtn">        
                             <input type="button" value="change" onclick="
@@ -44,34 +47,17 @@
                                     document.querySelector('body').dataset.mode = 'night';
                                     this.value = 'day';
                             }">
-                            <a href="#" type="button" id="login" value="Login">Login</a>
-                            <a href="#" type="button" id="signup"value="Signup">Signup</a>                        
+                            <a href="{% url 'login' %}" type="button" id="login" value="Login">Login</a> <!--여기 post.html 들어가야 하는 자리임-->
+                            <a href="{% url 'signup' %}" type="button" value="Signup" id="signup" >Signup</a>                        
                         </div>   
                     </li>
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi laudantium, facilis veniam neque facere velit corrupti inventore molestias doloribus! Iusto facilis libero ad hic ab! Dolor impedit laudantium asperiores aut!</p>       
             </header>
-            <div class="middle">
-                <section class="content">         
-                    <article>
-                            <section id="mainp">
-                                <form action = "{% url 'update' main.id %}">
-                                    <h3>제목 : </h3>
-                                    <input type="text" name="title" value="{{main.title}}">
-                                    <br>
-                                    <br>
-                                    <h3>본문 : </h4>
-                                    <textarea cols="40" rows="10" name="body">{{main.body}}</textarea>
-                                    <br>
-                                    <br>
-                                    <input class="btn-submit" type="submit" value="제출하기">
-                                </form>
-                            </section>
-                    </article>
-                    <aside class="content">
-                    </aside>
-                </section>
-            </div>
+            <section class="mainp">
+                        {% block content %}
+                        {% endblock %}
+            </section>
         </div>
         <footer>
             <ul>

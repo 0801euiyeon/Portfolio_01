@@ -2,15 +2,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 
 from .models import Main
-# from .models import Main
-# Create your views here.
 
 def home(request):
-    blogs = Main.objects
-    return render(request, 'home.html',{'blogs' : blogs})
-
-# def index(request):
-#     return render(request, 'index.html')
+    mains = Main.objects.all()
+    return render(request, 'home.html',{'mains' : mains})
 
 def post(request, main_id):
     main_post = get_object_or_404(Main, pk= main_id)
@@ -37,3 +32,11 @@ def update(request,main_id):
     main.body = request.GET['body']
     main.save()
     return redirect('/post/'+str(main.id))
+
+def delete(request, main_id):
+    main = Main.objects.get(id=main_id)
+    main.delete()
+    return redirect('/')
+
+# def portfolio(request,):
+#     return render(requset)

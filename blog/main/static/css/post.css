@@ -1,116 +1,3 @@
-body{
-    padding: 0;
-    margin: 0;
-    font-family: 'Noto Sans KR', sans-serif;
-    color: rgb(56, 56, 56);
-    text-decoration: none;
-}
-ul{
-    list-style: none;
-    display:inline-block; 
-    padding-inline-start: 0px;
-}
-li{
-    list-style: none;
-}
-    /* nav */
-nav{
-    display: grid;
-    grid-template-columns: auto;
-}
-.container{
-    display: grid;
-    grid-template-rows: 40px auto; 
-    padding-inline-start: auto;
-}
-.list:hover{
-    background-color: rgba(171, 162, 250, 0.568);
-}
-.listcontainer{
-    position: fixed;
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    background-color: rgba(245, 245, 245, 0.801);
-    margin:auto ;
-    padding-left: 0;
-    height: 40px;
-    font-family: 'Song Myung', serif; 
-}
-.list{
-    padding: 1%;
-    flex-grow: 1;
-    text-align: center;
-    font-size: 15px;
-    color: rgb(104, 69, 69);
-}
-.list>a:link{
-    text-decoration: none;
-    color: rgb(78, 91, 92);
-}
-
-/* header */
-#maintitle{
-    height: min-content;
-    font-family: 'Abril Fatface', cursive;
-    text-align: center;
-    color: rgb(57, 64, 104);
-}
-header{
-    padding: 1% 1% 1% 1% ;
-    background-color: rgb(227, 221, 236);
-    text-align: center;
-}
-header p{
-    margin-bottom: 0.5%;
-    font-size: x-small;
-    padding-bottom: 0;
-    color: lightslategray;
-}
-.changebtn >input{
-    float: right;
-    margin-top: 0%;
-    padding: 10px;
-    border-style: none;
-    background-color: rgb(245, 243, 236);
-    border-radius: 10px; 
-    color: rgb(84, 82, 90);
-    font-family: 'Song Myung', serif;
-    font-size: large; 
-}
-#login{
-    background-color: lightcoral;
-    color: rgb(250, 244, 240);
-    float: right;
-    margin-top: 0%;  margin-right: 4%;
-    padding: 10px;
-    border-style: none;
-    border-radius: 10px; 
-    font-family: 'Song Myung', serif;
-    font-size: large; 
-    text-decoration: none;
-}
-#signup{
-    background-color: rgb(128, 148, 240);
-    color: rgb(250, 244, 240);
-    float: right;
-    margin-top: 0%;  margin-right: 4%;
-    padding: 10px;
-    border-style: none;
-    border-radius: 10px; 
-    font-family: 'Song Myung', serif;
-    font-size: large; 
-    text-decoration: none;
-}
-
-.tlistcontainer{
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-}
-.tlist:nth-child(3){
-    justify-content: flex-end;
-}
 
     /* mainbody */
 .middle{
@@ -129,19 +16,55 @@ header p{
 }
 #mainbody {
     border: 0.2px solid rgba(99, 89, 84, 0.582);
-    border-radius: 20px;
     padding: 3%;
+    border-radius: 10px;
     width: auto;
     margin: 4% 5% 3% 4%;
     text-align: justify;
 }
+.btncontainer{
+    display: flex;
+    flex-direction: row-reverse;
+}
 #backbtn{
-    margin-left: 84%;
     padding: 10px;
     border-style: none;    
-    border-radius: 10px; 
-    background-color: rgb(245, 243, 236);
-    color: rgb(84, 82, 90);
+    border-radius: 2px; 
+    margin-right: 5px;
+    /* background-color: rgb(187, 185, 178); */
+    color: rgb(243, 241, 250);
+    font-family: 'Song Myung', serif;
+    font-size: large; 
+    text-decoration: none;
+}
+#modifybtn{
+    padding: 10px;
+    border-style: none;    
+    border-radius: 2px; 
+    margin: 0 3px 0 3px;
+    background-color: lightcoral;
+    color: white;
+    font-family: 'Song Myung', serif;
+    font-size: large; 
+    text-decoration: none;
+}
+#modifybtn{
+    padding: 10px;
+    border-style: none;    
+    border-radius: 2px; 
+    margin: 0 6px 0 6px;
+    background-color: lightcoral;
+    color: white;
+    font-family: 'Song Myung', serif;
+    font-size: large; 
+    text-decoration: none;
+}
+#deletebtn{
+    padding: 10px;
+    border-style: none;    
+    border-radius: 2px; 
+    background-color: rgb(102, 145, 194);
+    color: white;
     font-family: 'Song Myung', serif;
     font-size: large; 
     text-decoration: none;
@@ -155,5 +78,3 @@ footer{
     text-align: center;
     border-top: 0.2px solid #999999;
 }
-
- 

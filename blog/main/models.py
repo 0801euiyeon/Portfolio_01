@@ -11,3 +11,11 @@ class Main(models.Model):
 
     def summary(self):
         return self.body[:300]
+        
+# class Main(models.Model):
+#     title = models.CharField(max_length=255)
+#     image = models.ImageField(upload_to='images/')
+#     description = models.CharField(max_length=500)
+
+#     def __str__(self):
+#         return self.title

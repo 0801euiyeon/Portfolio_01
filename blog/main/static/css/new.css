@@ -1,0 +1,47 @@
+
+/*main body*/
+.middle{
+    text-align: center;
+}
+.post_title{
+    list-style: none;
+    display: inline-block;
+}
+.post_title h2 {
+    font-family: 'Song Myung', serif;
+    font-size: 17pt; 
+    color: rgb(80, 91, 150);
+}
+.titleBox{
+    height: 40px;
+    width: 80em;
+    border: 1px solid #99999973;
+    border-radius: 10px;
+}
+.postBox{
+    width: 80em;
+    border: 1px solid #99999973;
+    border-radius: 10px;
+}
+.btn-submit{
+    padding: 10px;
+    border-style: none;    
+    border-radius: 2px; 
+    background-color: rgb(102, 145, 194);
+    color: white;
+    font-family: 'Song Myung', serif;
+    font-size: large; 
+    text-decoration: none;
+}
+
+
+/* footer */
+
+footer ul li{
+    display: inline;
+}
+footer{
+    margin: 5%;;
+    text-align: center;
+    border-top: 0.2px solid #999999;
+}

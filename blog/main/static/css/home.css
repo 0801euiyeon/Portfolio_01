@@ -21,11 +21,11 @@ nav{
     display : grid;
     grid-template-rows: 100px auto;
 } */
-.container{
+/* .container{
     display: grid;
     grid-template-rows: 40px auto; 
     padding-inline-start: auto;
-}
+} */
 .list:hover{
     background-color: rgba(171, 162, 250, 0.568);
 }
@@ -142,40 +142,42 @@ header p{
     /* text-align: center; */
     height: 40px;
 }
-#mainp{
-    text-align: justify;
-    /* border-right:0.2px solid darkgrey; */
+.mainp{
+    text-align: justify; 
+    border-right:0.2px solid darkgrey;
 }
-#mainp> div {
+.mainp> div {
     padding: 2% 5% 2% 5%;
-    border: 0.2px solid rgba(104, 112, 129, 0.589);
-    border-radius: 20px;
+    border: 0.2px solid rgba(124, 128, 134, 0.589);    
+    border-radius: 5px;
     margin-bottom: 5%;
-    
 }
-#mainp h1 {
+.mainp h1 {
     font-family: 'Song Myung', serif;
     font-size: 17pt; 
     color: rgb(80, 91, 150);
 }
-#mainp p a {
-    float: right;
+.mainp div {
+    float: none;
     padding: 4px;
     border-style: none;    
     border-radius: 10px; 
-    background-color: rgb(204, 201, 191);
+    /* background-color: rgb(204, 201, 191); */
     color: rgb(84, 82, 90);
     font-family: 'Song Myung', serif;
     font-size: large; 
     text-decoration: none;
 }
-footer ul li{
-    display: inline;
-}
 footer{
     margin: 5%;;
     text-align: center;
+    display: grid;
+    grid-template-columns: auto;
     border-top: 0.2px solid #999999;
 }
-
+footer ul div li{
+    display: inline;
+    grid-template-rows:40px auto;
+    border-right: solid 1px gray; 
+}
  
